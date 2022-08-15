@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uDg-e9-Xxe">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--WallE List View Controller-->
+        <scene sceneID="Isr-E9-3H8">
+            <objects>
+                <viewController id="uDg-e9-Xxe" customClass="Wall_EListViewController" customModule="Wall_ENASAProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bPy-Cq-kvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="x1L-Av-Ol2">
+                                <rect key="frame" x="0.0" y="64" width="414" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="KNw-Bt-eoL"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for Wall-E location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ip-Cy-xOG">
+                                <rect key="frame" x="108.5" y="123" width="197" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Vw-jU-4BO">
+                                <rect key="frame" x="2" y="276" width="414" height="600"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="X0P-KV-9vh"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="nasaCell" rowHeight="117" id="DR9-4X-HhU" customClass="RoverTableViewCell" customModule="Wall_ENASAProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="117"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DR9-4X-HhU" id="dke-7c-66D">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dHA-TD-nOG">
+                                                    <rect key="frame" x="305" y="11" width="89" height="89"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="0Ru-WY-EWr"/>
+                                                        <constraint firstAttribute="width" secondItem="dHA-TD-nOG" secondAttribute="height" multiplier="1:1" id="izo-si-1oQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dHA-TD-nOG" firstAttribute="trailing" secondItem="dke-7c-66D" secondAttribute="trailingMargin" id="BfU-wq-Q9m"/>
+                                                <constraint firstItem="dHA-TD-nOG" firstAttribute="top" secondItem="dke-7c-66D" secondAttribute="topMargin" id="P8t-9d-YhA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="dHA-TD-nOG" secondAttribute="bottom" constant="6" id="s2Q-iq-jMy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="roverImageView" destination="dHA-TD-nOG" id="Ade-Lt-p1s"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bmh-TI-lfd">
+                                <rect key="frame" x="50" y="146" width="314" height="32"/>
+                                <segments>
+                                    <segment title="Curiosity"/>
+                                    <segment title="Oppurtunity"/>
+                                    <segment title="Spirit"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlTapped:" destination="uDg-e9-Xxe" eventType="valueChanged" id="Jwm-re-Byn"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WbU-N3-mqD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x1L-Av-Ol2" firstAttribute="top" secondItem="WbU-N3-mqD" secondAttribute="top" constant="20" id="0Pz-uK-A5c"/>
+                            <constraint firstItem="3ip-Cy-xOG" firstAttribute="centerX" secondItem="WbU-N3-mqD" secondAttribute="centerX" id="18a-gz-WMa"/>
+                            <constraint firstItem="x1L-Av-Ol2" firstAttribute="leading" secondItem="WbU-N3-mqD" secondAttribute="leading" id="47u-cZ-JGH"/>
+                            <constraint firstItem="6Vw-jU-4BO" firstAttribute="leading" secondItem="WbU-N3-mqD" secondAttribute="leading" constant="2" id="6Vf-Ei-aGP"/>
+                            <constraint firstItem="3ip-Cy-xOG" firstAttribute="top" secondItem="x1L-Av-Ol2" secondAttribute="bottom" constant="8" id="Giu-Kf-1MM"/>
+                            <constraint firstItem="6Vw-jU-4BO" firstAttribute="trailing" secondItem="WbU-N3-mqD" secondAttribute="trailing" constant="2" id="M0M-b9-3a1"/>
+                            <constraint firstItem="x1L-Av-Ol2" firstAttribute="centerX" secondItem="3ip-Cy-xOG" secondAttribute="centerX" id="NXn-ty-ede"/>
+                            <constraint firstItem="WbU-N3-mqD" firstAttribute="trailing" secondItem="Bmh-TI-lfd" secondAttribute="trailing" constant="50" id="eYu-IG-dkL"/>
+                            <constraint firstAttribute="bottom" secondItem="6Vw-jU-4BO" secondAttribute="bottom" constant="20" id="n7P-xe-EqF"/>
+                            <constraint firstItem="Bmh-TI-lfd" firstAttribute="leading" secondItem="WbU-N3-mqD" secondAttribute="leading" constant="50" id="nxp-8X-wyv"/>
+                            <constraint firstItem="Bmh-TI-lfd" firstAttribute="top" secondItem="3ip-Cy-xOG" secondAttribute="bottom" constant="2" id="r5v-Rt-XIb"/>
+                            <constraint firstItem="3ip-Cy-xOG" firstAttribute="top" secondItem="x1L-Av-Ol2" secondAttribute="bottom" constant="8" id="xTS-Ta-bWw"/>
+                            <constraint firstItem="3ip-Cy-xOG" firstAttribute="top" secondItem="x1L-Av-Ol2" secondAttribute="bottom" constant="8" id="zft-aW-YPC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nasaSearchBar" destination="x1L-Av-Ol2" id="bP5-vI-YeF"/>
+                        <outlet property="segmentedControl" destination="Bmh-TI-lfd" id="5hW-ZK-S9J"/>
+                        <outlet property="tableView" destination="6Vw-jU-4BO" id="aLS-Uv-Ooc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yS5-P0-4ON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221.73913043478262" y="124.55357142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
